@@ -34,6 +34,9 @@ Setup generates local secrets, builds the drawing service, starts both container
 
 Open **http://localhost:3000** and create your administrator account on a fresh installation. Under **Admin Settings → Connections**, add your chat provider's URL and API key, then select a tool-capable model. The Docker stack does not include a language model; the verified example uses Groq with `openai/gpt-oss-20b`.
 
+## Docker 
+![Open WebUI Home](storage/1.png)
+
 ## 2. Generate an image
 
 Enable **Drawing Studio** in the chat composer's **Integrations / Tools** menu, then send:
