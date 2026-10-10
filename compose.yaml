@@ -1,15 +1,45 @@
 services:
   open-webui:
-    image: ghcr.io/open-webui/open-webui:main
+    image: ghcr.io/open-webui/open-webui@sha256:8b432fe0a65b91116afc7961365c6cca5379cc923171386a96691f3471f3cae9
     ports:
       - "127.0.0.1:3000:8080"
     extra_hosts:
       - "host.docker.internal:host-gateway"
     env_file:
       - .env.open-webui
+      - .env.drawing
+    depends_on:
+      drawing-tool:
+        condition: service_healthy
     volumes:
       - open-webui-data:/app/backend/data
     restart: unless-stopped
 
+  drawing-tool:
+    build:
+      context: ./drawing_tool
+      target: production
+    env_file:
+      - .env.drawing
+    ports:
+      - "127.0.0.1:8001:8000"
+    volumes:
+      - drawing-images:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 10s
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+
 volumes:
   open-webui-data:
+  drawing-images:
