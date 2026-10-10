@@ -68,7 +68,7 @@ The setup script creates a random **256-bit API key** in `.env.drawing` and supp
 Use the Docker service name for backend calls and localhost for browser access. Both published ports bind to the local machine. For remote hosting, configure HTTPS and set `DRAWING_PUBLIC_URL` to the browser-accessible image origin.
 
 ## Different models 
-![Open WebUI Home](storage/3.png)
+![Open WebUI Home](storage/2.png)
 
 ## 4. File structure
 
