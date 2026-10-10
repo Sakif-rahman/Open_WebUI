@@ -45,7 +45,8 @@ Enable **Drawing Studio** in the chat composer's **Integrations / Tools** menu, 
 
 The tool supports rectangles, ellipses, lines, polygons, and text. It returns `image_url`, `markdown`, dimensions, and an expiration time.
 
-![Example generated from model-supplied drawing instructions](docs/model-example.png)
+## Image 
+![Open WebUI Home](storage/3.png)
 
 ## 3. Tool connection and authorization
 
@@ -65,6 +66,9 @@ The setup script creates a random **256-bit API key** in `.env.drawing` and supp
 `.env.open-webui` stores the Open WebUI session secret; `.env.drawing` stores tool settings. Both files are ignored by Git. See [.env.example](.env.example) for variable names. Chat-provider credentials are configured separately in Open WebUI.
 
 Use the Docker service name for backend calls and localhost for browser access. Both published ports bind to the local machine. For remote hosting, configure HTTPS and set `DRAWING_PUBLIC_URL` to the browser-accessible image origin.
+
+## Different models 
+![Open WebUI Home](storage/3.png)
 
 ## 4. File structure
 
