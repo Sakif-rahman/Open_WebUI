@@ -22,7 +22,7 @@ The LLM translates the request into shapes and text. Open WebUI executes the too
 
 ## 1. Run with Docker
 
-**Prerequisites:** Windows PowerShell, Git, Docker Desktop running Linux containers, and a chat-model provider that supports tool calling. Ports **3000** and **8001** must be free. Python is installed inside the containers.
+**Prerequisites:** Windows PowerShell, Git, Docker Desktop running Linux containers, and a chat-model provider that supports tool calling. Ports **3000** and **8080** must be free. Python is installed inside the containers.
 
 ```powershell
 git clone https://github.com/Sakif-rahman/Open_WebUI.git
